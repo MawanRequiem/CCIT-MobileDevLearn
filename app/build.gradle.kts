@@ -4,16 +4,17 @@ plugins {
 
 android {
     namespace = "com.example.ccit_learn"
-    compileSdk = 33
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.ccit_learn"
-        minSdk = 24
-        targetSdk = 33
+        //noinspection OldTargetApi,EditedTargetSdkVersion
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        minSdk = 27
     }
 
     buildTypes {
@@ -33,6 +34,7 @@ android {
 
 dependencies {
 
+    //noinspection UseTomlInstead,GradleDependency
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     testImplementation("junit:junit:4.13.2")
