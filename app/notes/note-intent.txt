@@ -1,0 +1,36 @@
+Intent digunakan untuk memanggil sebuah activity melalui activity lain
+
+Ada 3 jenis Intent yaitu:
+
+Intent explicit
+Intent yang digunakan ketika seseorang tahu nama dari activity yang akan dipanggil
+- Menetukan activity yang akan dituju
+- digunakan untuk activity yang ada didalam activity yang sama
+
+Intent Implicit
+Digunakan ketika tidak mengetahui nama dari activity lain, biasanya digunakan untuk mengaktifkan
+komponen yang ada pada aplikasi lain
+
+Intent Filter
+Berfungsi untuk menentukan jenis intent yang diterima, contoh pada yang sudah dibuat
+intent.action.MAIN berarti activity ini akan dijalankan langsung saat aplikasi dijalankan
+
+Mengirim data dari sebuah Activity ke Activity lain
+Activity1
+
+    // Pembuatan objek intent1 menggunakan class Intent dengan 2 parameter yang berisi Activity sekarang
+    dan activity yang dituju. Intent ini bisa dianalogikan sebagai kurir.
+    Intent intent1 = new Intent(Activity1.this, Activity2.class);
+
+    // Membuat objek bundle untuk melakukan penyimpanan nilai. Dianalogikan sebagi tas dari
+    si kurir
+    Bundle b1 = new Bundle();
+
+    // Meletakkan nilai di objek bundle yang berisi key dan nilai dari key itu.
+    b1.putDouble("key1", 10);
+    b1.putDouble("key2", 20);
+
+    // Menambahkan bundle ke objek intent yang akan dikirim ke komponen lain
+    intent1.putExtras(b1);
+    startActivity(intent1);
+
